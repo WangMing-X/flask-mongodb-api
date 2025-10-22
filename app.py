@@ -1,7 +1,9 @@
 from flask import Flask, jsonify
 from pymongo import MongoClient
+from flask_cors import CORS  # 新增导入
 
 app = Flask(__name__)
+CORS(app)  # 新增这行，允许所有域名跨域访问（测试/生产均可）
 
 # 替换为你的 MongoDB 连接字符串（务必确保准确）
 client = MongoClient("mongodb+srv://wangmingwindyrabbitx_db_user:wamTMFUa1ZVIC1Je@clusterdailytools.xrhfmmo.mongodb.net/?retryWrites=true&w=majority&appName=ClusterDailyTools")
